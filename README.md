@@ -1,3 +1,3 @@
-#BlueberryMovies Javascript Project
+# BlueberryMovies Javascript Project
 
     - Erasmushoogschool EHB 2021
