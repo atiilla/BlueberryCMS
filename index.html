@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Blueberry | Watch movies with HD quality 720p 1080p</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="blueberry,movie,watch,online,watch online, watch 1080p, watch 720p, online movies">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.fc94be86.css">
+  <link rel="icon shortcut" href="./blueberry.3192cd11.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin>
+</head>
+
+<body>
+  <nav class="blueberrynav mb-3 navbar navbar-dark navbar-expand-md">
+    <div class="container-fluid"> <img src="./blueberry.3192cd11.png" width="3%"> <a
+        href="./index.html" class="mr-3 navbar-brand text-dark">Blueberry</a> <button type="button"
+        class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"> <span
+          class="navbar-toggler-icon"></span> </button>
+      <div class="border-dark border-left collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav"> <a href="#" class="active nav-item nav-link text-dark">Home</a> <a href="#"
+            class="mostviewed nav-item nav-link text-dark">Most viewed</a> <a href="#"
+            class="moviesbyimdb nav-item nav-link text-dark">Movies by IMDB</a> <a href="#"
+            class="nav-item nav-link text-dark" data-toggle="modal" data-target="#addmovie">Add New Movie</a> <a
+            href="#" class="managemovies nav-item nav-link text-dark" data-toggle="modal"
+            data-target="#managemovies">Manage Movies</a> </div>
+      </div>
+    </div>
+  </nav>
+  <div data-reactroot="" class="app">
+    <div class="input-group"> <input type="text" class="form-control search text-white"
+        aria-label="Text input with dropdown button">
+      <div class="input-group-append"> <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORY</button>
+        <div class="dropdown-menu"> </div>
+      </div>
+    </div>
+    <div class="bg-dark jumbotron">
+      <h1 class="display-3 jumbo-title">Joker</h1>
+      <pre class="jumbo-content lead text-muted">
+        Language: EN
+        Release Date: 2020
+        Category: Drama
+      </pre>
+      <hr class="my-2">
+      <p class="lead"> <a class="btn btn-lg btn-primary featuredtrailer" href="#" target="_blank" role="button">Watch
+          Trailer</a> </p>
+    </div>
+    <ul class="movies"> </ul>
+  </div>
+  <div class="bd-example-modal-lg fade modal" id="moviedetail" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="bg-dark modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-warning" id="movietitle">Modal title</h5> <button type="button"
+            class="close text-white" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="detail-body modal-body" id="moviedetailbody"> ... </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bd-example-modal-lg fade modal" id="managemovies" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="bg-dark modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-warning" id="movietitle">Manage Movies</h5> <button type="button"
+            class="close text-white" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="detail-body modal-body">
+          <table class="table table-dark table-hover table-xs-responsive text-white"
+            summary="An example of a responsive table using Bootstrap breakpoints." aria-role="table">
+            <thead>
+              <tr class="text-primary">
+                <td>ID</td>
+                <th>Title</th>
+                <th>Release Date</th>
+                <th>IMDB</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="viewmovies">
+              <tr class="success"> </tr>
+            </tbody>
+          </table>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination"> </ul>
+          </nav>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bd-example-modal-lg fade modal" tabindex="-1" id="addmovie" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="addMovieContent bg-dark container-fluid p-3">
+          <p class="lead"> Add a new movie </p>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend"> <span class="input-group-text" id="basic-addon3">Title</span> </div>
+            <input type="text" class="form-control p-1" id="title" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend"> <span class="input-group-text" id="basic-addon3">Poster</span> </div>
+            <input type="text" class="form-control p-1" id="poster" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend"> <span class="input-group-text" id="basic-addon3">Trailer URL</span> </div>
+            <input type="text" class="form-control p-1" id="trailer" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend"> <span class="input-group-text" id="basic-addon3">Language</span> </div>
+            <input type="text" class="form-control p-1" id="language" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend"> <span class="input-group-text" id="basic-addon3">Release Date</span>
+            </div> <input type="text" class="form-control p-1" id="releasedate" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend"> <span class="input-group-text" id="basic-addon3">IMDB Score</span> </div>
+            <input type="number" class="form-control p-1" id="imdb" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend"> <label class="input-group-text" for="inputGroupSelect01">Category</label>
+            </div> <select class="custom-select" id="moviecategories">
+              <option selected>Choose...</option>
+            </select>
+          </div> <a name="" id="addMovie" class="btn btn-warning float-right" href="#" role="button">Add Movie</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./src.79deec77.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin>
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin>
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin>
+    </script>
+</body>
+
+</html>
